@@ -1,3 +1,5 @@
+let test = "tastytest"
+
 const perusmuotoVerbRections=[
     'haluta', 'osata', 'voida', 'saada', 'jaksaa',
     'kannattaa', 'pitää', 'tahtoa', 'viitsiä', 'luvata',
