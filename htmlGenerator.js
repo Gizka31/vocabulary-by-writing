@@ -1,4 +1,4 @@
-//hahah what a silly comment hope it wont get to commited to github thatd be too silly 
+
 const fs = require("fs")
 const path = require("path")
 const verbs = require("./public/arrays.js").verbs

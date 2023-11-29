@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded',async function () {
 
-const values = await fetch("http://localhost:8000/arrays")
+const response = await fetch("http://localhost:8000/arrays")
+const values = await response.json()
 
 let giveUpButton = document.querySelector("#giveUp");
 let restartButton = document.querySelector("#restart");
@@ -14,7 +15,7 @@ let wordNumber = document.querySelectorAll(".word").length
 let wordsGuessed = 0
 wordCount.textContent = `${wordsGuessed}/${wordNumber}`
 
-const vebs = values.verbs
+const verbs = values.verbs
 const additional = values.additional
 let additionalState = true
 
@@ -30,8 +31,8 @@ input.addEventListener("keypress",(event)=>{
             wordsGuessed+=1
             wordCount.textContent = `${wordsGuessed}/${wordNumber}`
             if(additionalState){
-                example.textContent = additional.example[verbs.indexOf(word)]
-                translation.textContent = additional.translation[verbs.indexOf(word)]
+                example.textContent = additional.example[verbs.indexOf(word.textContent)]
+                translation.textContent = additional.translation[verbs.indexOf(word.textContent)]
             }
         }
 
